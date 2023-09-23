@@ -1,10 +1,10 @@
 import React from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const Home = () => {
     return (
-        <div>
-            Home
+        <div className='homepage'>
+            <h1>Home</h1>
         </div>
     )
 }
