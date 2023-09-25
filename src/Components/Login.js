@@ -3,6 +3,13 @@ import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom'
 
 const Login = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    async function submit(e) {
+        e.preventDefault();
+    }
+
     return (
         <div className='login'>
             <h1>login</h1>
@@ -15,7 +22,7 @@ const Login = () => {
             <br />
             <p>OR</p>
             <br />
-            <Link to="/signup"></Link>
+            <Link to="/signup">Signup Page</Link>
         </div>
     )
 }
