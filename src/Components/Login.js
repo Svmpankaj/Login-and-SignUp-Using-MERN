@@ -8,6 +8,15 @@ const Login = () => {
 
     async function submit(e) {
         e.preventDefault();
+
+        try {
+            await axios.post("http://localhost:8000/", {
+                email, password
+            })
+        }
+        catch (e) {
+            console.log(e);
+        }
     }
 
     return (
@@ -17,7 +26,7 @@ const Login = () => {
                 <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder='Email' name='' />
                 <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder='Password' name='' />
 
-                <input type="submit" />
+                <input type="submit" onClick={submit} />
             </form>
             <br />
             <p>OR</p>
