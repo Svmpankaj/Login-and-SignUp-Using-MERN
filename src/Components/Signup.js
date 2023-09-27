@@ -10,7 +10,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            await axios.post("http://localhost:8000/", {
+            await axios.post("http://localhost:8000/signup", {
                 email, password
             })
         }
@@ -31,7 +31,7 @@ const Login = () => {
             <br />
             <p>OR</p>
             <br />
-            <Link to="/signup">Signup Page</Link>
+            <Link to="/">Login Page</Link>
         </div>
     )
 }
