@@ -37,6 +37,11 @@ app.post("/", async (req, res) => {
 app.post("/signup", async (req, res) => {
     const { email, password } = req.body
 
+    const data = {
+        email: email,
+        password: password
+    }
+
     try {
         const check = await collection.findOne({ email: email })
         if (check) {
@@ -44,9 +49,14 @@ app.post("/signup", async (req, res) => {
         }
         else {
             res.json("notexist")
+            await collection.insertMany([data])
         }
     }
     catch (e) {
         res.json("notexist")
     }
+})
+
+app.listen(8000, () => {
+    console.log("port connected");
 })
